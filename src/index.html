@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Markup Starter</title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="img/favicon.png">
+	<!-- @if STYLE_MIN -->
+	<link rel="stylesheet" href="styles/style.min.css">
+	<!-- @endif -->
+	<!-- @if !STYLE_MIN -->
+	<link rel="stylesheet" href="styles/style.css">
+	<!-- @endif -->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+		@@include('./modules/header.html')
+
+		@@include('./modules/main.html')
+
+		@@include('./modules/footer.html')
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	<!-- @if JS_MIN -->
+	<script src="js/main.min.js"></script>
+	<!-- @endif -->
+	<!-- @if !JS_MIN -->
+	<script src="js/main.js"></script>
+	<!-- @endif -->
+
+</body>
+
+</html>
