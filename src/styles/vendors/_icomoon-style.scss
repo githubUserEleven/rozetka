@@ -1,11 +1,12 @@
 @import "vendors/icomoon-variables";
+
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?lj41nj');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?lj41nj#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?lj41nj') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?lj41nj') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?lj41nj##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ysnzhh');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ysnzhh#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ysnzhh') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ysnzhh') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ysnzhh##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +27,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cart {
+  &:before {
+    content: $icon-cart; 
+  }
+}
 .icon-armchair {
   &:before {
     content: $icon-armchair; 
@@ -214,6 +220,16 @@
 .icon-mobile {
   &:before {
     content: $icon-mobile; 
+  }
+}
+.icon-comment {
+  &:before {
+    content: $icon-comment; 
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user; 
   }
 }
 .icon-arrow-right {
