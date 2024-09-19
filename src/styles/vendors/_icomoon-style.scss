@@ -1,0 +1,229 @@
+@import "vendors/icomoon-variables";
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?lj41nj');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?lj41nj#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?lj41nj') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?lj41nj') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?lj41nj##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-armchair {
+  &:before {
+    content: $icon-armchair; 
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search; 
+  }
+}
+.icon-heart {
+  &:before {
+    content: $icon-heart; 
+  }
+}
+.icon-info {
+  &:before {
+    content: $icon-info; 
+  }
+}
+.icon-gamepad {
+  &:before {
+    content: $icon-gamepad; 
+  }
+}
+.icon-bear {
+  &:before {
+    content: $icon-bear; 
+  }
+}
+.icon-left-arrow {
+  &:before {
+    content: $icon-left-arrow; 
+  }
+}
+.icon-right-arrow {
+  &:before {
+    content: $icon-right-arrow; 
+  }
+}
+.icon-dropdown-arrow {
+  &:before {
+    content: $icon-dropdown-arrow; 
+  }
+}
+.icon-security {
+  &:before {
+    content: $icon-security; 
+  }
+}
+.icon-wallet {
+  &:before {
+    content: $icon-wallet; 
+  }
+}
+.icon-truck {
+  &:before {
+    content: $icon-truck; 
+  }
+}
+.icon-scales {
+  &:before {
+    content: $icon-scales; 
+  }
+}
+.icon-map-pin {
+  &:before {
+    content: $icon-map-pin; 
+  }
+}
+.icon-shop {
+  &:before {
+    content: $icon-shop; 
+  }
+}
+.icon-discount {
+  &:before {
+    content: $icon-discount; 
+  }
+}
+.icon-help {
+  &:before {
+    content: $icon-help; 
+  }
+}
+.icon-sprayer {
+  &:before {
+    content: $icon-sprayer; 
+  }
+}
+.icon-coctail {
+  &:before {
+    content: $icon-coctail; 
+  }
+}
+.icon-clip {
+  &:before {
+    content: $icon-clip; 
+  }
+}
+.icon-paw {
+  &:before {
+    content: $icon-paw; 
+  }
+}
+.icon-perfume {
+  &:before {
+    content: $icon-perfume; 
+  }
+}
+.icon-shirt {
+  &:before {
+    content: $icon-shirt; 
+  }
+}
+.icon-tennis-racket {
+  &:before {
+    content: $icon-tennis-racket; 
+  }
+}
+.icon-shovel-and-fork {
+  &:before {
+    content: $icon-shovel-and-fork; 
+  }
+}
+.icon-bathtub {
+  &:before {
+    content: $icon-bathtub; 
+  }
+}
+.icon-drill {
+  &:before {
+    content: $icon-drill; 
+  }
+}
+.icon-washing-machine {
+  &:before {
+    content: $icon-washing-machine; 
+  }
+}
+.icon-computer {
+  &:before {
+    content: $icon-computer; 
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook; 
+  }
+}
+.icon-instagram {
+  &:before {
+    content: $icon-instagram; 
+  }
+}
+.icon-telegram {
+  &:before {
+    content: $icon-telegram; 
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter; 
+  }
+}
+.icon-viber {
+  &:before {
+    content: $icon-viber; 
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube; 
+  }
+}
+.icon-home {
+  &:before {
+    content: $icon-home; 
+  }
+}
+.icon-laptop {
+  &:before {
+    content: $icon-laptop; 
+  }
+}
+.icon-mobile {
+  &:before {
+    content: $icon-mobile; 
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right; 
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left; 
+  }
+}
+

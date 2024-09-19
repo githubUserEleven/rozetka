@@ -19,6 +19,8 @@ $media-expressions: ('screen': 'screen',
 @import 'vendors/include-media';
 @import 'vendors/normalize';
 @import 'vendors/fonts';
+@import 'vendors/icomoon-style';
+@import 'vendors/icomoon-variables';
 
 @import 'base/variables';
 @import 'base/functions';
