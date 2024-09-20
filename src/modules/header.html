@@ -1,8 +1,11 @@
 <header id="header" class="bg-dark py-3">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between">
-      <a href="#" class="navbar-brand box-img me-4">
+      <a href="#" class="navbar-brand logo box-img me-4">
         <img src="../img/logo.svg" alt="Логотип" />
+      </a>
+      <a href="#" class="navbar-brand logo-mobile me-4">
+        <img src="../img/rozetka-logo.svg" alt="Логотип" />
       </a>
 
       <a
@@ -13,35 +16,65 @@
         <span> Каталог</span>
       </a>
 
-      <div class="input-group search-form">
+      <div id="search-form" class="input-group search-form me-4">
         <input type="text" class="form-control" id="search-form" />
-        <label class="input-group-text btn btn-success" for="search-form"
-          >Upload</label
+        <label
+          class="input-group-text btn btn-success d-flex align-items-center justify-content-center"
+          for="search-form"
+          >Найти</label
         >
       </div>
-      <div class="lang-select-holder">
-        <select
-          class="form-select lang-select"
-          aria-label="Default select example"
-        >
-          <option selected>RU</option>
-          <option value="2">EN</option>
-          <option value="3">UA</option>
-        </select>
-      </div>
+      <!-- <i id="search-btn" class="icon-search"></i> -->
 
-      <ul class="navbar-nav icon-list d-flex flex-row align-items-center">
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#">
-            <i class="icon-user"></i>
-          </a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="#">
-            <i class="icon-cart"></i>
-          </a>
-        </li>
-      </ul>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="dropdown search-dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i id="search-btn" class="icon-search"></i>
+          </button>
+          <div class="dropdown-menu">
+            <div id="search-form" class="input-group search-form me-4">
+              <input type="text" class="form-control" id="search-form" />
+              <label
+                class="input-group-text btn btn-success d-flex align-items-center justify-content-center"
+                for="search-form"
+                >Найти</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="lang-select-holder d-flex align-items-center justify-content-center me-3"
+        >
+          <select
+            class="form-select lang-select"
+            aria-label="Default select example"
+          >
+            <option selected>RU</option>
+            <option value="2">EN</option>
+            <option value="3">UA</option>
+          </select>
+          <i class="icon-dropdown-arrow"></i>
+        </div>
+
+        <ul class="navbar-nav icon-list d-flex flex-row align-items-center">
+          <li class="nav-item profile mx-3">
+            <a class="nav-link " href="#">
+              <i class="icon-user"></i>
+            </a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">
+              <i class="icon-cart"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

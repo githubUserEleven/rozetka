@@ -37,6 +37,25 @@ $media-expressions: (
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  &:after {
+    @include animate(opacity z-index background);
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: transparent;
+  }
+
+  @include media(">=desktop") {
+    &:after {
+      display: none;
+    }
+  }
 }
 
 #header {
@@ -48,32 +67,107 @@ $media-expressions: (
       max-width: 1762px;
     }
 
-    .box-img {
+    .logo {
+      display: none;
       min-width: 305px;
+      @include media(">=desktop") {
+        display: block;
+      }
+    }
+
+    .logo-mobile {
+      display: block;
+      min-width: 50px;
+      @include media(">=desktop") {
+        display: none;
+      }
     }
 
     .catalog-button {
       min-width: 125px;
       font-size: 17px;
       line-height: 1.23;
+
+      @include media("<desktop") {
+        display: none !important;
+      }
     }
 
-    .lang-select {
-      max-width: 83px;
-      background-color: transparent;
-      border: none;
-      font-size: 20px;
-      background-size: 0;
-      color: $white;
+    .lang-select-holder {
+      min-width: 83px;
+
+      .lang-select {
+        width: inherit;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        background-size: 0;
+        color: $white;
+        padding: 10px;
+      }
+
+      .icon-dropdown-arrow {
+        color: white;
+        font-size: 27px;
+      }
     }
 
     .search-form {
+      display: none;
+
+      @include media(">=tablet") {
+        display: flex;
+      }
+
       input {
         border-radius: 6px 0px 0px 6px;
+      }
+      label {
+        min-width: 98px;
+        font-size: 20px;
+        line-height: 1;
+      }
+    }
+    .icon-search {
+      font-size: 30px;
+      color: $white;
+    }
+
+    .search-dropdown {
+      display: block;
+
+      @include media(">=tablet") {
+        display: none;
+      }
+
+      .dropdown-toggle {
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .search-form {
+        display: flex;
+      }
+
+      .dropdown-menu {
+        padding: 10px 15px;
+        &.show {
+          min-width: 320px;
+        }
       }
     }
 
     .icon-list {
+
+      .profile {
+
+        @include media('<phone') {
+          display: none;
+        }
+      }
+
       a {
         color: $white;
       }
@@ -85,22 +179,6 @@ $media-expressions: (
       .icon-cart {
         font-size: 50px;
       }
-    }
-  }
-
-  .logo {
-    margin-right: 30px;
-
-    @include media("<desktop") {
-      max-width: 300px;
-    }
-
-    @include media("<tablet") {
-      max-width: 250px;
-    }
-
-    &:before {
-      display: none;
     }
   }
 }
