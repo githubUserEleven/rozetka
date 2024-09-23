@@ -2,7 +2,7 @@
   $(function () {
     initExample();
     initMobileNav();
-    initSearchBtn();
+    initStickyHeader();
   });
 
   const initExample = () => {
@@ -20,13 +20,20 @@
     });
   };
 
-//   const initSearchBtn = () => {
-//     $(document).ready(function () {
-//       $("#search-btn").on("click", function () {
-//         $("#search-form").toggleClass("visible");
-//       });
-//     });
-//   };
+  const initStickyHeader = () => {
+    $(document).ready(function () {
+      var header = $("#header");
+      var sticky = header.offset().top;
+
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > sticky) {
+          header.addClass("sticky");
+        } else {
+          header.removeClass("sticky");
+        }
+      });
+    });
+  };
 })(jQuery);
 
 (function ($) {

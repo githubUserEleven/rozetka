@@ -58,8 +58,20 @@ $media-expressions: (
   }
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.primary-color {
+  color: $primary-color !important;
+}
+
 #header {
-  padding: 10px 0 5px;
+  padding: 10px 0 7px;
 
   .container {
     max-width: inherit;
@@ -104,6 +116,10 @@ $media-expressions: (
         background-size: 0;
         color: $white;
         padding: 10px;
+
+        option {
+          color: $black;
+        }
       }
 
       .icon-dropdown-arrow {
@@ -115,7 +131,7 @@ $media-expressions: (
     .search-form {
       display: none;
 
-      @include media(">=tablet") {
+      @include media(">=600px") {
         display: flex;
       }
 
@@ -136,12 +152,11 @@ $media-expressions: (
     .search-dropdown {
       display: block;
 
-      @include media(">=tablet") {
+      @include media(">=600px") {
         display: none;
       }
 
       .dropdown-toggle {
-
         &:after {
           display: none;
         }
@@ -160,10 +175,8 @@ $media-expressions: (
     }
 
     .icon-list {
-
       .profile {
-
-        @include media('<phone') {
+        @include media("<phone") {
           display: none;
         }
       }
@@ -183,18 +196,50 @@ $media-expressions: (
   }
 }
 
-.intro {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: $white;
-  font-weight: 700;
-  background-size: cover;
-  background-position: center;
-  min-height: 420px;
+#aside {
+  width: 28%;
+  border-right: 1px solid #f5f5f5;
+  padding: 17px 0 20px 45px;
 
-  @include media(">=tablet") {
-    min-height: 500px;
-    margin-bottom: 20px;
+  .navbar-nav {
+    border-bottom: 1px solid #f5f5f5;
+    padding: 9px 25px 2px 0;
+
+    > li {
+      margin-bottom: 5px;
+
+      a {
+        @include animate(color);
+        display: flex;
+        align-items: center;
+        color: #221f1f;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    &.adress-list {
+      line-height: 1;
+
+      .adress {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .icon {
+    font-size: 25px;
+    margin-right: 12px;
+
+    &.icon-gamepad {
+      font-size: 29px;
+    }
+  }
+
+  span {
+    font-size: 18px;
   }
 }
