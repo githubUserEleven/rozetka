@@ -196,12 +196,6 @@ $media-expressions: (
   }
 }
 
-h5 {
-  font-family: "Arial", sans-serif;
-  font-weight: bold;
-  color: #797878;
-}
-
 #aside {
   width: 28%;
   border-right: 1px solid #f5f5f5;
@@ -251,6 +245,10 @@ h5 {
     &.icon-gamepad {
       font-size: 29px;
     }
+  }
+
+  h5 {
+    color: #797878;
   }
 }
 
@@ -394,5 +392,77 @@ h5 {
 
   p {
     margin: 0;
+  }
+}
+
+.carousel {
+  .slider-arrow {
+    top: 50%;
+    width: 8%;
+    transform: translateY(-50%);
+    opacity: 1;
+
+    .slider-arrow-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+      color: $black;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  .all-discounts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 240px;
+    min-height: 50px;
+    color: #3e77aa;
+    text-align: center;
+    text-decoration: none;
+    border-left: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    margin-left: auto;
+
+    .number {
+      color: #a6adc5;
+      padding-left: 7px;
+    }
+  }
+}
+
+.section {
+  .row {
+    .col {
+      max-width: 240px;
+    }
+  }
+}
+
+.products-section {
+  .row {
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-right: 1px solid #e9e9e9;
+      border-bottom: 1px solid #e9e9e9;
+      padding: 10px 11px;
+
+      .box-img {
+        display: flex;
+        align-items: center;
+        max-width: 160px;
+        height: 160px;
+
+        img {
+          max-height: 160px;
+        }
+      }
+    }
   }
 }
