@@ -37,6 +37,7 @@ $media-expressions: (
   position: relative;
   width: 100%;
   overflow: hidden;
+  padding-top: 90px;
 
   &:after {
     @include animate(opacity z-index background);
@@ -51,19 +52,16 @@ $media-expressions: (
     background-color: transparent;
   }
 
+  @include media(">=tablet") {
+    padding-top: 75px;
+  }
+
   @include media(">=desktop") {
+    padding-top: 90px;
     &:after {
       display: none;
     }
   }
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
 }
 
 .primary-color {
@@ -71,6 +69,11 @@ $media-expressions: (
 }
 
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   padding: 10px 0 7px;
 
   .container {
@@ -197,9 +200,13 @@ $media-expressions: (
 }
 
 #aside {
-  width: 28%;
+  width: 416px;
   border-right: 1px solid #f5f5f5;
   padding: 17px 0 20px 0;
+
+  @include media("<desktop") {
+    display: none;
+  }
 
   .aside-holder {
     padding-left: 45px;
@@ -414,55 +421,77 @@ $media-expressions: (
     }
   }
 
-  .all-discounts {
+  .btn-outline-secondary {
     display: flex;
     justify-content: center;
-    align-items: center;
-    max-width: 240px;
-    min-height: 50px;
-    color: #3e77aa;
-    text-align: center;
-    text-decoration: none;
-    border-left: 1px solid #e9e9e9;
-    border-bottom: 1px solid #e9e9e9;
+    min-width: 240px;
+    color: #3E77AA;
     margin-left: auto;
-
-    .number {
-      color: #a6adc5;
-      padding-left: 7px;
-    }
-  }
-}
-
-.section {
-  .row {
-    .col {
-      max-width: 240px;
-    }
   }
 }
 
 .products-section {
+  margin-bottom: 29px;
+  h2 {
+    margin-bottom: 28px;
+  }
+
   .row {
-    .col {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+    > div {
       border-right: 1px solid #e9e9e9;
       border-bottom: 1px solid #e9e9e9;
-      padding: 10px 11px;
+    }
+  }
 
-      .box-img {
-        display: flex;
-        align-items: center;
-        max-width: 160px;
-        height: 160px;
+  .card {
+    max-width: 240px;
+    border: 0;
 
-        img {
-          max-height: 160px;
-        }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 10px 0;
+    }
+
+    .box-img {
+      display: flex;
+      align-items: center;
+      max-width: 230px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    span {
+      display: block;
+      line-height: 1;
+    }
+    .discount {
+      .price {
+        font-size: 15px;
+        color: #797878;
+        text-decoration: line-through;
+        margin-bottom: 6px;
       }
+
+      .discount-price {
+        font-size: 19px;
+        color: #f84147;
+      }
+    }
+
+    + .btn-outline-secondary {
+      width: calc(100% + 26px);
+      border: 0;
+      border-top: 1px solid #e9e9e9;
+      border-radius: 0;
+      margin: 0 -13px;
     }
   }
 }
