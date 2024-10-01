@@ -68,6 +68,10 @@ $media-expressions: (
   color: $primary-color !important;
 }
 
+.light-blue-color {
+  color: $blue;
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -201,7 +205,7 @@ $media-expressions: (
 
 #aside {
   width: 416px;
-  border-right: 1px solid #f5f5f5;
+  border-right: 1px solid $light-gray;
   padding: 17px 0 20px 0;
 
   @include media("<desktop") {
@@ -214,7 +218,7 @@ $media-expressions: (
   }
 
   .navbar-nav {
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid $light-gray;
     padding: 9px 25px 2px 0;
 
     > li {
@@ -260,7 +264,7 @@ $media-expressions: (
 }
 
 .login-card-holder {
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid $light-gray;
   padding-bottom: 16px;
   margin: 15px 0;
 }
@@ -287,7 +291,7 @@ $media-expressions: (
 .download-group,
 .social-holder {
   text-align: center;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid $light-gray;
 
   .list {
     @extend %listreset;
@@ -363,7 +367,7 @@ $media-expressions: (
 
   .info-list {
     @extend %listreset;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid $light-gray;
     padding-bottom: 13px;
     margin-bottom: 32px;
 
@@ -413,7 +417,7 @@ $media-expressions: (
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #f5f5f5;
+      background-color: $light-gray;
       color: $black;
       width: 50px;
       height: 50px;
@@ -422,11 +426,26 @@ $media-expressions: (
   }
 
   .btn-outline-secondary {
+    @include animate(color background-color);
     display: flex;
     justify-content: center;
     min-width: 240px;
-    color: #3E77AA;
+    color: #3e77aa;
+    border-radius: 0;
     margin-left: auto;
+    margin-top: -1px;
+
+    .text-secondary {
+      @include animate(color);
+    }
+
+    &:hover {
+      color: $white;
+
+      .text-secondary {
+        color: $white !important;
+      }
+    }
   }
 }
 
@@ -494,4 +513,58 @@ $media-expressions: (
       margin: 0 -13px;
     }
   }
+}
+
+.carousel-holder {
+  max-width: 550px;
+
+  .productCarousel {
+    display: flex;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: $black;
+    background-color: $light-gray;
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .box-img {
+    width: 60px;
+    cursor: pointer;
+  }
+
+  .carousel-item {
+    &.active {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      object-fit: contain;
+      min-height: 400px;
+    }
+  }
+
+  .small-img-holder {
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    .box-img {
+      margin: 0 15px 26px;
+    }
+
+    img {
+      max-height: 65px;
+    }
+  }
+}
+
+.characteristics-list {
+  @extend %listreset;
 }
