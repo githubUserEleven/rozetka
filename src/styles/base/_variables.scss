@@ -10,6 +10,7 @@ $white: #fff;
 $light-blue: #39f;
 $blue: #3e77AA;
 $red: #ed0000;
+$yellow: #FFA900;
 $green: #00a046;
 
 $primary-color: $green;
@@ -30,7 +31,7 @@ $vertical-rhythm: ($base-line-height * 1em);
 $base-min-width: 320px;
 
 // Liks
-$base-link-color: $primary-color;
+$base-link-color: $black;
 
 // Buttons
 $btn-color: $white !default;
