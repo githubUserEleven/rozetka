@@ -656,6 +656,15 @@ a {
   }
 }
 
+.bordered-block {
+  border: 1px solid $light-gray;
+  border-radius: 9px;
+
+  .bordered {
+    border-bottom: 1px solid $light-gray;
+  }
+}
+
 .recomended {
   font-size: 16px;
   line-height: 1.5;
@@ -680,22 +689,22 @@ a {
 }
 
 .payment {
-  border: 1px solid $red;
   border-radius: 10px;
-  padding: 16px 0 20px;
+  padding: 9px 0 20px;
+  margin-bottom: 20px;
 
   .seller {
-    border-bottom: 1px solid $red;
+    padding: 0 20px 11px;
 
     span {
       margin-right: 5px;
     }
   }
 
-  .in-stock {
+  .product-trade {
+    padding: 10px 20px 13px;
 
     .price-box {
-
       span {
         display: block;
         line-height: 1.5;
@@ -707,15 +716,119 @@ a {
     }
   }
 
-  .btn {
-    min-width: 200px;
-    font-size: 19px;
-    padding: 15px 10px;
+  .button-box {
+    min-width: 350px;
+    .btn {
+      min-width: 165px;
+      font-size: 19px;
+      padding: 9px 10px;
 
-    .icon-cart {
+      .icon-cart {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .likes-box {
+    .icon-scales {
       font-size: 30px;
+      margin-right: 10px;
+    }
+
+    .likes {
+      font-size: 16px;
+      .icon-heart {
+        color: $yellow;
+        font-size: 25px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .bank-list {
+    @extend %listreset;
+    flex-wrap: wrap;
+    padding: 15px 10px 5px;
+
+    > li {
+      padding: 0 10px;
+      margin-bottom: 10px;
+
+      .btn {
+        padding: 0;
+      }
+    }
+  }
+
+  .bonus {
+    padding: 20px 20px 0;
+
+    .letter-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      line-height: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #f2e312;
+      color: $black;
+      margin-right: 15px;
+    }
+
+    .icon-info {
+      font-size: 21px;
     }
   }
 }
 
+.services {
+  padding: 20px 20px 7px 20px;
 
+  h5 {
+    margin-bottom: 24px;
+  }
+
+  .form-check {
+    margin-bottom: 14px;
+  }
+
+  .form-check-input {
+    margin-right: 22px;
+  }
+
+  img {
+    margin-right: 14px;
+  }
+}
+
+.delivery {
+  padding: 10px 0 20px;
+
+  .address {
+    padding: 0 20px 14px;
+
+    .icon-map-pin {
+      font-size: 26px;
+      margin-right: 20px;
+    }
+  }
+
+  .delivery-method {
+    .delivery-method-list {
+      @extend %listreset;
+
+      > li {
+        padding: 0 20px;
+
+        .icon {
+          font-size: 28px;
+        }
+        .box-img {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
