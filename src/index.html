@@ -70,8 +70,10 @@
                     <img src="/img/war.jpg" class="d-block w-100" alt="..." />
                   </div>
                 </div>
+
+                <!-- Buttons for desktop version -->
                 <button
-                  class="carousel-control-prev slider-arrow"
+                  class="carousel-control-prev slider-arrow d-none d-md-block"
                   type="button"
                   data-bs-target="#carouselAutoplaying"
                   data-bs-slide="prev"
@@ -83,7 +85,7 @@
                   <span class="visually-hidden">Предыдущий</span>
                 </button>
                 <button
-                  class="carousel-control-next slider-arrow"
+                  class="carousel-control-next slider-arrow d-none d-md-block"
                   type="button"
                   data-bs-target="#carouselAutoplaying"
                   data-bs-slide="next"
@@ -94,6 +96,61 @@
                   ></i>
                   <span class="visually-hidden">Следующий</span>
                 </button>
+
+                <!-- Indicators for mobile version -->
+                <div class="carousel-indicators d-md-none">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Слайд 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="1"
+                    aria-label="Слайд 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="2"
+                    aria-label="Слайд 3"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="3"
+                    aria-label="Слайд 4"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="4"
+                    aria-label="Слайд 5"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="5"
+                    aria-label="Слайд 6"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="6"
+                    aria-label="Слайд 7"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselAutoplaying"
+                    data-bs-slide-to="7"
+                    aria-label="Слайд 8"
+                  ></button>
+                </div>
+
                 <button class="btn btn-lg btn-outline-secondary">
                   <span>Все акции</span>
                   &nbsp

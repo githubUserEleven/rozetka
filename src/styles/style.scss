@@ -441,21 +441,20 @@ a {
 }
 
 .carousel {
-  .slider-arrow {
-    top: 50%;
-    width: 8%;
-    transform: translateY(-50%);
-    opacity: 1;
+  margin-bottom: 32px;
 
-    .slider-arrow-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $light-gray;
-      color: $black;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+  .carousel-control-prev {
+    left: 16px;
+  }
+  .carousel-control-next {
+    right: 16px;
+  }
+
+  .carousel-indicators {
+    bottom: 25px;
+
+    button {
+      background-color: $black;
     }
   }
 
@@ -463,11 +462,22 @@ a {
     @include animate(color background-color);
     display: flex;
     justify-content: center;
-    min-width: 240px;
+    min-width: 150px;
+    font-size: 15px;
     color: #3e77aa;
     border-radius: 0;
     margin-left: auto;
     margin-top: -1px;
+
+    @include media(">=tablet") {
+      min-width: 200px;
+      font-size: 17px;
+    }
+
+    @include media(">=desktop") {
+      min-width: 240px;
+      font-size: 20px;
+    }
 
     .text-secondary {
       @include animate(color);
@@ -592,18 +602,6 @@ a {
     display: flex;
   }
 
-  .carousel-control-prev,
-  .carousel-control-next {
-    align-self: center;
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    color: $black;
-    background-color: $light-gray;
-    border-radius: 50%;
-    opacity: 1;
-  }
-
   .box-img {
     width: 60px;
     cursor: pointer;
@@ -634,13 +632,34 @@ a {
     }
   }
 }
+.carousel-control-prev,
+.carousel-control-next {
+  @include animate(color background-color);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-gray;
+  color: $black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  &:hover,
+  :active {
+    color: #3e77aa;
+    background-color: $gray;
+  }
+}
 
 .pick-up {
   padding-left: 21px;
   margin-bottom: 33px;
 }
 
-.characteristics-list {
+.description-list {
   @extend %listreset;
   border-bottom: 1px solid $light-gray;
   padding-bottom: 25px;
@@ -672,9 +691,19 @@ a {
   border-radius: 9px;
   padding: 20px;
 
+  @include media(">=tablet") {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .box-img {
     min-width: 79px;
-    margin-right: 16px;
+    margin: 0 0 10px 0;
+
+    @include media(">=tablet") {
+      margin: 0 16px 0 0;
+    }
   }
 
   span {
@@ -685,6 +714,10 @@ a {
 
   .price {
     font-size: 18px;
+
+    @include media(">=tablet") {
+      padding-left: 15px;
+    }
   }
 }
 
@@ -702,7 +735,14 @@ a {
   }
 
   .product-trade {
+    
     padding: 10px 20px 13px;
+
+    @include media(">=desktop") {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
 
     .price-box {
       span {
@@ -717,7 +757,13 @@ a {
   }
 
   .button-box {
-    min-width: 350px;
+    @include media(">=tablet") {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 350px;
+    }
+
     .btn {
       min-width: 165px;
       font-size: 19px;
@@ -727,20 +773,20 @@ a {
         font-size: 30px;
       }
     }
-  }
 
-  .likes-box {
-    .icon-scales {
-      font-size: 30px;
-      margin-right: 10px;
-    }
+    .likes-box {
+      .icon-scales {
+        font-size: 30px;
+        margin-right: 10px;
+      }
 
-    .likes {
-      font-size: 16px;
-      .icon-heart {
-        color: $yellow;
-        font-size: 25px;
-        margin-right: 5px;
+      .likes {
+        font-size: 16px;
+        .icon-heart {
+          color: $yellow;
+          font-size: 25px;
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -785,6 +831,7 @@ a {
 
 .services {
   padding: 20px 20px 7px 20px;
+  margin-bottom: 20px;
 
   h5 {
     margin-bottom: 24px;
@@ -805,6 +852,7 @@ a {
 
 .delivery {
   padding: 10px 0 20px;
+  margin-bottom: 20px;
 
   .address {
     padding: 0 20px 14px;
@@ -818,9 +866,10 @@ a {
   .delivery-method {
     .delivery-method-list {
       @extend %listreset;
+      padding-top: 16px;
 
       > li {
-        padding: 0 20px;
+        padding: 0 20px 12px;
 
         .icon {
           font-size: 28px;
@@ -828,6 +877,87 @@ a {
         .box-img {
           margin-right: 20px;
         }
+
+        .titles {
+          h5 {
+            font-weight: 400;
+          }
+        }
+
+        h5 {
+          line-height: 1.5;
+          margin-bottom: 0;
+        }
+
+        span {
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+.payment-guarantee-list {
+  @extend %listreset;
+
+  > li {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 15px 20px 0;
+
+    .icon-box {
+      margin-right: 22px;
+    }
+
+    .icon {
+      font-size: 28px;
+    }
+  }
+}
+
+// .product-carousel {
+//   position: relative;
+
+//   .carousel-inner {
+//     display: flex;
+//   }
+
+//   .carousel-item {
+//     display: flex;
+//   }
+
+//   .card {
+//     width: 100%;
+//     margin: 0 5px;
+//   }
+// }
+
+.characteristics {
+  .characteristics-list {
+    @extend %listreset;
+    width: 492px;
+
+    > li {
+      display: flex;
+      justify-content: space-between;
+
+      span,
+      a {
+        width: 50%;
+      }
+
+      span {
+        position: relative;
+        display: inline-block;
+
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   left: 117%;
+        //   bottom: 16px;
+        //   width: 189%;
+        //   border-bottom: 1px dotted $red;
+        // }
       }
     }
   }
