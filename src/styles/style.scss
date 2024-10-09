@@ -37,7 +37,7 @@ $media-expressions: (
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding-top: 90px;
+  padding: 90px 0 20px;
 
   &:after {
     @include animate(opacity z-index background);
@@ -53,7 +53,7 @@ $media-expressions: (
   }
 
   @include media(">=tablet") {
-    padding-top: 75px;
+    padding-top: 83px;
   }
 
   @include media(">=desktop") {
@@ -70,10 +70,6 @@ a {
 
 .primary-color {
   color: $primary-color !important;
-}
-
-.light-blue-color {
-  color: $blue;
 }
 
 #header {
@@ -210,14 +206,14 @@ a {
 #aside {
   width: 416px;
   border-right: 1px solid $light-gray;
-  padding: 17px 0 20px 0;
+  padding: 17px 0 20px 20px;
 
   @include media("<desktop") {
     display: none;
   }
 
   .aside-holder {
-    padding-left: 45px;
+    padding-left: 25px;
     margin-bottom: 15px;
   }
 
@@ -411,11 +407,11 @@ a {
   display: inline-block;
   position: relative;
   color: #c5c5c5;
-  font-size: 21px;
+  font-size: 20px;
   text-shadow: 0px 1px 0 #a2a2a2;
 
   @include media(">=tablet") {
-    font-size: 26px;
+    font-size: 27px;
   }
 
   span {
@@ -500,74 +496,86 @@ a {
   }
 
   .row {
-    > div {
+    > a {
       border-right: 1px solid #e9e9e9;
       border-bottom: 1px solid #e9e9e9;
-    }
-  }
+      color: $black;
 
-  .card {
-    max-width: 240px;
-    border: 0;
+      .discount {
+        .price {
+          font-size: 15px;
+          color: #797878;
+          text-decoration: line-through;
+          margin-bottom: 6px;
+        }
 
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      padding: 10px 0;
-    }
-
-    .box-img {
-      display: flex;
-      align-items: center;
-      max-width: 230px;
-      height: 200px;
-      margin-bottom: 20px;
-    }
-
-    h4 {
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    span {
-      display: block;
-      line-height: 1;
-    }
-    .discount {
-      .price {
-        font-size: 15px;
-        color: #797878;
-        text-decoration: line-through;
-        margin-bottom: 6px;
+        .discount-price {
+          font-size: 19px;
+          color: #f84147;
+        }
       }
-
-      .discount-price {
-        font-size: 19px;
-        color: #f84147;
-      }
-    }
-
-    + .btn-outline-secondary {
-      width: calc(100% + 26px);
-      border: 0;
-      border-top: 1px solid #e9e9e9;
-      border-radius: 0;
-      margin: 0 -13px;
     }
   }
 }
+.card {
+  max-width: 240px;
+  border: 0;
 
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px 0;
+  }
+
+  .box-img {
+    display: flex;
+    align-items: center;
+    max-width: 230px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  span {
+    display: block;
+    line-height: 1;
+  }
+
+  + .btn-outline-secondary {
+    width: calc(100% + 26px);
+    border: 0;
+    border-top: 1px solid #e9e9e9;
+    border-radius: 0;
+    margin: 0 -13px;
+  }
+}
 .product-header {
-  padding-top: 28px;
-  margin-bottom: 20px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+
+  @include media(">=desktop") {
+    padding-top: 28px;
+    margin-bottom: 20px;
+  }
 }
 
 .breadcrumb {
+  font-size: 15px;
+
+  @include media(">=desktop") {
+    font-size: 18px;
+  }
+
   > li {
     a {
       @include animate(color);
+      color: $black;
 
       &:hover {
         color: $primary-color;
@@ -597,6 +605,11 @@ a {
 
 .carousel-holder {
   max-width: 550px;
+  margin: 0 auto 20px;
+
+  @include media(">=desktop") {
+    margin-bottom: 0;
+  }
 
   .productCarousel {
     display: flex;
@@ -624,7 +637,7 @@ a {
     margin: 0 -15px;
 
     .box-img {
-      margin: 0 15px 26px;
+      margin: 0 15px 22px;
     }
 
     img {
@@ -654,16 +667,16 @@ a {
   }
 }
 
-.pick-up {
-  padding-left: 21px;
-  margin-bottom: 33px;
-}
-
 .description-list {
   @extend %listreset;
   border-bottom: 1px solid $light-gray;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   margin-bottom: 15px;
+
+  @include media(">=desktop") {
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+  }
 
   > li {
     margin-bottom: 13px;
@@ -672,6 +685,15 @@ a {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+.pick-up {
+  margin-bottom: 15px;
+
+  @include media(">=desktop") {
+    padding-left: 21px;
+    margin-bottom: 33px;
   }
 }
 
@@ -690,6 +712,7 @@ a {
   border: 1px solid $primary-color;
   border-radius: 9px;
   padding: 20px;
+  margin-bottom: 14px;
 
   @include media(">=tablet") {
     display: flex;
@@ -721,6 +744,42 @@ a {
   }
 }
 
+.color-palette {
+  margin-bottom: 27px;
+
+  .color-name {
+    margin-bottom: 10px;
+  }
+
+  .colors-list {
+    @extend %listreset;
+    display: flex;
+    padding-left: 7px;
+    margin: 0 -10px;
+
+    > li {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      margin: 0 10px;
+
+      &.active {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          width: 40px;
+          height: 40px;
+          border: 1px solid $primary-color;
+          border-radius: 9px;
+        }
+      }
+    }
+  }
+}
+
 .payment {
   border-radius: 10px;
   padding: 9px 0 20px;
@@ -735,7 +794,6 @@ a {
   }
 
   .product-trade {
-    
     padding: 10px 20px 13px;
 
     @include media(">=desktop") {
@@ -754,26 +812,41 @@ a {
         font-size: 33px;
       }
     }
-  }
 
-  .button-box {
-    @include media(">=tablet") {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 350px;
-    }
+    .button-box {
+      max-width: 350px;
+      margin-bottom: 15px;
 
-    .btn {
-      min-width: 165px;
-      font-size: 19px;
-      padding: 9px 10px;
+      @include media(">=phone") {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-      .icon-cart {
-        font-size: 30px;
+      @include media(">=tablet") {
+        min-width: 350px;
+      }
+
+      @include media(">=widescreen") {
+        max-width: none;
+        margin-bottom: 0;
+      }
+
+      .btn {
+        min-width: 165px;
+        font-size: 19px;
+        padding: 9px 10px;
+        margin-bottom: 10px;
+
+        @include media(">=phone") {
+          margin-bottom: 0;
+        }
+
+        .icon-cart {
+          font-size: 30px;
+        }
       }
     }
-
     .likes-box {
       .icon-scales {
         font-size: 30px;
@@ -842,6 +915,7 @@ a {
   }
 
   .form-check-input {
+    min-width: 18px;
     margin-right: 22px;
   }
 
@@ -851,8 +925,12 @@ a {
 }
 
 .delivery {
-  padding: 10px 0 20px;
+  padding: 10px 0 10px;
   margin-bottom: 20px;
+
+  @include media(">=tablet") {
+    padding: 10px 0 20px;
+  }
 
   .address {
     padding: 0 20px 14px;
@@ -869,16 +947,35 @@ a {
       padding-top: 16px;
 
       > li {
-        padding: 0 20px 12px;
+        padding: 0 20px 15px;
+
+        @include media(">=tablet") {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 20px 12px;
+        }
+
+        .method {
+          margin-bottom: 5px;
+        }
 
         .icon {
           font-size: 28px;
         }
         .box-img {
+          min-width: 30px;
           margin-right: 20px;
         }
 
         .titles {
+          @include media(">=phone") {
+            min-width: 150px;
+          }
+
+          @include media(">=tablet") {
+            min-width: 210px;
+          }
+
           h5 {
             font-weight: 400;
           }
@@ -891,6 +988,10 @@ a {
 
         span {
           line-height: 1.6;
+        }
+
+        .price {
+          text-align: right;
         }
       }
     }
@@ -915,49 +1016,226 @@ a {
   }
 }
 
-// .product-carousel {
-//   position: relative;
+.slider-holder {
+  margin-bottom: 45px;
 
-//   .carousel-inner {
-//     display: flex;
-//   }
+  @include media(">=widescreen") {
+    margin-bottom: 85px;
+  }
 
-//   .carousel-item {
-//     display: flex;
-//   }
+  h2 {
+    margin-bottom: 24px;
+  }
 
-//   .card {
-//     width: 100%;
-//     margin: 0 5px;
-//   }
-// }
+  .responsive {
+    position: relative;
 
-.characteristics {
-  .characteristics-list {
-    @extend %listreset;
-    width: 492px;
-
-    > li {
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: $light-gray;
+      border: none;
+      border-radius: 50%;
+      z-index: 1;
 
-      span,
-      a {
-        width: 50%;
+      &.slick-prev {
+        left: 0;
       }
 
-      span {
-        position: relative;
-        display: inline-block;
+      &.slick-next {
+        right: 0;
+      }
+    }
 
-        // &::before {
-        //   content: "";
-        //   position: absolute;
-        //   left: 117%;
-        //   bottom: 16px;
-        //   width: 189%;
-        //   border-bottom: 1px dotted $red;
-        // }
+    .slick-dots {
+      @extend %listreset;
+      display: flex;
+      justify-content: center;
+      margin: 0 -15px;
+
+      > li {
+        margin: 0 15px;
+
+        button {
+          width: 10px;
+          height: 10px;
+          background-color: $black;
+          border: none;
+          border-radius: 50%;
+          font-size: 0;
+        }
+
+        &.slick-active {
+          button {
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .card {
+      position: relative;
+      border-right: 1px solid $light-gray;
+      border-bottom: 1px solid $light-gray;
+      border-radius: 0;
+
+      .card-body {
+        padding: 10px;
+      }
+
+      .top-sale {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 13px;
+        background-color: $yellow;
+        border-radius: 18px;
+        padding: 3px 9px;
+      }
+
+      .favorites {
+        position: absolute;
+        top: 19px;
+        right: 10px;
+
+        .icon-heart {
+          color: $yellow;
+          font-size: 25px;
+        }
+      }
+
+      .star-ratings {
+        margin-right: 17px;
+      }
+
+      .icon-comment {
+        color: $gray;
+        font-size: 13px;
+        margin-right: 10px;
+      }
+
+      .comments-number {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.characteristics-list {
+  @extend %listreset;
+
+  > li {
+    margin-bottom: 12px;
+
+    .holder {
+      position: relative;
+      display: block;
+      width: 100%;
+
+      span {
+        background-color: $white;
+        padding-right: 18px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 16px;
+        // top: 50%;
+        // transform: translateY(-50%);
+        border-bottom: 1px dotted $gray;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.comments-block {
+  .comments-list {
+    @extend %listreset;
+
+    > li {
+      font-size: 16px;
+      padding: 15px 20px 25px;
+
+      .information {
+        @include media(">=tablet") {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      .customer-bio {
+        margin-bottom: 10px;
+
+        @include media(">=tablet") {
+          margin-bottom: 0;
+        }
+      }
+
+      .name {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        @include media(">=tablet") {
+          margin-bottom: 0;
+        }
+
+        h4 {
+          margin-bottom: 0;
+        }
+      }
+
+      .more-info,
+      .date {
+        font-size: 14px;
+        color: #807f7f;
+      }
+
+      .more-info {
+        display: block;
+        line-height: 1.5;
+      }
+
+      .star-ratings {
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      p {
+        line-height: 1.5;
+        margin-bottom: 6px;
+      }
+
+      .value {
+        font-family: "Arial", sans-serif;
+        margin-bottom: 24px;
+
+        span {
+          display: block;
+          line-height: 1.5;
+          margin-bottom: 10px;
+        }
+      }
+
+      .answer {
+        color: #437aac;
+        padding-left: 6px;
+
+        img {
+          margin-right: 9px;
+        }
       }
     }
   }
